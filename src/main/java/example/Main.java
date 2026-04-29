@@ -1,4 +1,4 @@
-package com.xpdustry.claj_plugin_template;
+package example;
 
 import arc.util.CommandHandler;
 

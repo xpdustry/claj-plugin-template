@@ -1,4 +1,4 @@
-package com.xpdustry.claj_plugin_template;
+package example;
 
 import com.xpdustry.claj.server.plugin.Plugin;
 import com.xpdustry.claj.server.plugin.PluginLogger;

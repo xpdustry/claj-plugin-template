@@ -1,0 +1,4 @@
+rootProject.name = 'claj-plugin-template'
+
+// Here add your sub-projects if any
+//include 'example'
