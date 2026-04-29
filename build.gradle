@@ -1,0 +1,43 @@
+import com.xpdustry.toxopid.spec.ModMetadata
+import com.xpdustry.toxopid.spec.ModPlatform
+
+plugins {
+  id "java"
+  id "com.xpdustry.toxopid" version "4.2.0"
+}
+
+repositories {
+  mavenCentral()
+  maven { url "https://maven.xpdustry.com/releases" }
+  maven { url "https://www.jitpack.io" }
+}
+
+def metafile = "plugin.hjson"
+def metadata = ModMetadata.fromJson(file(metafile))
+group = "com.xpdustry"
+version = metadata.version
+description = metadata.description
+
+// Force java 1.8 (not needed but recommended)
+compileJava {
+  targetCompatibility = JavaVersion.VERSION_1_8
+  sourceCompatibility = JavaVersion.VERSION_21
+  options.encoding = "UTF-8"
+  options.release = 8
+}
+
+dependencies {
+  annotationProcessor "com.xpdustry:jabel:1.1.0" // For Java 21 syntactic sugar
+  //compileOnly "com.xpdustry.claj:server:2.4"
+  compileOnly files("../claj/claj-server.jar")
+}
+
+jar {
+  archiveFileName = "${metadata.name}.jar"
+
+  // Include plugin metadata
+  from(rootDir) {
+    include metafile
+  }
+}
+

@@ -1,0 +1,7 @@
+name: template-plugin
+displayName: Template Plugin
+author: ZetaMap
+main: com.xpdustry.claj_plugin_template.Main
+description: "This is a template plugin to show CLaJ features."
+version: "1.0"
+repo: xpdustry/claj-template-plugin
